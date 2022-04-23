@@ -1,0 +1,56 @@
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: lightgrey;
+    font-family: 'Roboto', sans-serif
+}
+
+.card{
+    height: 150px;
+    width: 150px;
+    position: relative;
+    transition: all 1.5s ease;
+    transform-style: preserve-3d;
+}
+
+.front,
+.back{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    border-radius: 10px;
+
+}
+
+.front{
+    background: lightseagreen;
+    z-index: 2;
+    backface-visibility: hidden;
+}
+.back{
+    background: cornflowerblue;
+    z-index: 1;
+    transform: rotateY(180deg);
+}
+
+.container:hover .card{
+    transform: rotateY(180deg);
+}
+
+.container{
+    perspective: 1000px;
+}
+
+.flashCards{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+
+}
